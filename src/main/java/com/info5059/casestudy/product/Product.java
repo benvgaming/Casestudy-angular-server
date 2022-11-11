@@ -3,7 +3,10 @@ package com.info5059.casestudy.product;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import java.math.BigDecimal;
+
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 @Entity
 @Data
@@ -20,6 +23,9 @@ public class Product {
     private int eoq;
     private int qoh;
     private int qoo;
-    private String qrcode;
+    
+    @Basic(optional = true)
+    @Lob
+    private byte[] qrcode;
     private String qrcodetxt;
 }
